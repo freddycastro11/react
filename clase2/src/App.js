@@ -1,5 +1,6 @@
 import React from 'react';
 import "./styles/styles.scss"
+import MainMenu from './MainMenu.jsx'
 import Banner from './Banner'
 import Formulario from './Formulario'
 import CourseGrid from './CourseGrid'
@@ -12,6 +13,7 @@ import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
 
 const App =() => (
   <Router>
+    <MainMenu />
     <Switch>
       <Route path="/" exact component={Banner}/>
       <Route path="/cursos/:id" component={ Course }/>
