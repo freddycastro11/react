@@ -1,5 +1,6 @@
 import React from "react"
 
+
 const cursos = [
     {
         "id": 1,

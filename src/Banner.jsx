@@ -8,7 +8,6 @@ const Banner = () => (
                 <div className="main-banner__data s-center">
                     <p className="t2 s-mb-0">Cursos en React</p>
                     <p> Mi primera pagina en React</p>
-                    <a href="#" class="button">Botón</a>
                 </div>
             </div>
         </div>

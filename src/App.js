@@ -4,9 +4,11 @@ import MainMenu from './MainMenu.jsx'
 import Banner from './Banner'
 import Formulario from './Formulario'
 import CourseGrid from './CourseGrid'
+import Aboutme from './Aboutme'
+import Historial from './Historial';
 import Course from './Course'
+import './styles/MainMenu.css'
 import {BrowserRouter as Router, Route, Switch} from "react-router-dom";
-
 
 
 
@@ -16,8 +18,11 @@ const App =() => (
     <MainMenu />
     <Switch>
       <Route path="/" exact component={Banner}/>
+      <Route path="/Aboutme" component={Aboutme}/>
       <Route path="/cursos/:id" component={ Course }/>
       <Route path="/cursos" component={CourseGrid}/>
+      <Route path="/Historial" component={Historial}/>
+      <Route path="/Historial/:valor" component={Historial}/>
       <Route path="/formulario" component={()=> <Formulario name="Página de inscripción" />}/>
     <Route component={()=> (
       <div className="ed-grid">

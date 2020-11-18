@@ -1,7 +1,7 @@
 import React from 'react'
-import Curso from './curso'
+import CourseCard from './CourseCard'
 
-const cursos = [
+const courses = [
     {
         "id":   1,
         "titulo":"React desde Cero",
@@ -34,8 +34,8 @@ const cursos = [
 
 const CourseGrid = () => (
     <div className="ed-grid m-grid-4">
-        {cursos.map(c => (
-        <Curso 
+        {courses.map(c => (
+            <CourseCard
         key={c.id} 
         id={c.id}
         title={c.titulo}
