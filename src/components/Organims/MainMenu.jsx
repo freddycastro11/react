@@ -11,7 +11,7 @@ const MainMenu = () =>(
                 <nav className="main-menu" id="main-menu">
                     <ul>
                         <li><NavLink exact to="/" activeClassName="activo">Inicio</NavLink></li>
-                        <li><NavLink to="/formulario" activeClassName="activo">Formulario</NavLink></li>
+                        <li><NavLink to="/form" activeClassName="activo">Formulario</NavLink></li>
                         <li><NavLink to="/cursos" activeClassName="activo">Cursos</NavLink></li>
                         <li><NavLink to="/Aboutme" activeClassName="activo">About Me</NavLink></li>
                     </ul>
