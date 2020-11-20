@@ -1,6 +1,6 @@
 import React, {Component} from "react"
 
-class Formulario extends Component {
+class Form extends Component {
 
     constructor(props){
         super(props)
@@ -36,7 +36,7 @@ class Formulario extends Component {
             <div className="ed-grid">
                 <h1>Formulario {this.props.name}</h1>
                 <h4>Fecha Actual: {Math.ceil(this.state.fecha/1000)}</h4>
-                <form id="elemento">
+                <form id="form-element">
                 <div className="ed-grid m-grid-2" >
                     
                         <div className="form__item">
@@ -60,11 +60,14 @@ class Formulario extends Component {
         )
     }
         componentDidMount(){
-           // let elemento = document.getElementById("elemento")
-            //metodo para que se actualice la fecha cada segundo
+            let elemento = document.getElementById("form-element")
+            console.log(elemento)
+            
             this.intervaloFecha = setInterval(() =>{
                 this.cambiarFecha()
+                console.log(new Date())
             }, 1000)
+
         }
 
         componentDidUpdate(prevProps, prevState){
@@ -80,4 +83,4 @@ class Formulario extends Component {
 
 }
 
-export default Formulario
+export default Form
