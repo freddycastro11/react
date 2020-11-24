@@ -1,6 +1,7 @@
 import React from "react"
 import { Component } from "react";
 import UsersCard from "../Molecules/UsersCard"
+import axios from "axios"
 
 class Users extends Component{
 
@@ -12,7 +13,7 @@ class Users extends Component{
         }
     }
 
-    componentDidMount(){
+    /* componentDidMount(){
         fetch('https://jsonplaceholder.typicode.com/users', {method: 'get'})
         .then(response => response.json())
             .then(response2 => {
@@ -21,7 +22,16 @@ class Users extends Component{
                 })
             })
     }
+    */
 
+    componentDidMount(){
+        axios.get('https://jsonplaceholder.typicode.com/users')
+        .then(resp => {
+            this.setState({
+                users: resp.data
+            })
+        })
+    }
     render(){
         const {users} = this.state
         return(
