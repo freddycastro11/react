@@ -3,7 +3,7 @@ import "../styles/styles.scss"
 import MainMenu from './Organims/MainMenu'
 import Home from './Pages/Home.jsx'
 import Form from './Pages/Form'
-import CourseGrid from './Organims/CourseGrid';
+import Courses from './Pages/Courses';
 import Aboutme from './Organims/Aboutme'
 import Historial from './Pages/Historial'
 import Course from './Pages/Course'
@@ -21,7 +21,7 @@ const App =() => (
       <Route path="/" exact component={Home}/>
       <Route path="/Aboutme" component={Aboutme}/>
       <Route path="/cursos/:id" component={ Course }/>
-      <Route path="/cursos" component={CourseGrid}/>
+      <Route path="/cursos" component={Courses  }/>
       <Route path="/Historial" component={Historial}/>
       <Route path="/Historial/:valor" component={Historial}/>
       <Route path="/usuarios" component={Users} />
