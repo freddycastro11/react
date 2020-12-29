@@ -1,4 +1,5 @@
 import React from "react"
+import withLoader from "../HOC/withLoader"
 import UsersCard from "../Molecules/UsersCard"
 
 
@@ -7,9 +8,7 @@ const UsersGrid = ({users}) =>(
         <h1 className="center">Usuarios</h1>
         <div className="ed-grid s-grid-2 m-grid-3 l-grid-4">
             {
-                users.length === 0 ? <h1 className="t3">Cargando...
-                        </h1>
-                    : users.map(u => (
+                users.map(u => (
                         <UsersCard
                             key={u.id}
                             name={u.name}
@@ -25,4 +24,4 @@ const UsersGrid = ({users}) =>(
 
 
 
-export default UsersGrid
+export default withLoader("users")(UsersGrid)
