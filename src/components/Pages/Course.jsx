@@ -1,43 +1,43 @@
+import React, {useState, useEffect} from "react"
 import axios from "axios"
-import React from "react"
-import { Component } from "react"
+import useCourse from "../CustomsHooks/useCourse"
 
 
+const Course = ({match }) =>{
 
-class Course extends Component{
 
-    constructor(props){
-        super(props)
+    const [comment, setComment] = useState("Sin comentarios")
+    const course = useCourse(match.params.id)
 
-        this.state = {
-            cursoActual: {}
-        }
+
+    const myComment = e => {
+        setComment(e.target.value)
     }
 
-        componentDidMount(){
-            axios.get(`http://my-json-server.typicode.com/freddycastro11/json-db/cursos/${this.props.match.params.id}`)
-                .then(resp => this.setState({
-                    cursoActual: resp.data
-                }))
-        }
 
-        rende(){
+
             return (
                 <div className="ed-grid m-grid-3">
                     {
-                        this.state.cursoActual ? (
-                            <>
-                                <h1 className="m-cols-3">{this.state.cursoActual.titulo} </h1>
-                                <img className="m-cols-1" src={this.state.cursoActual.image} alt={this.state.cursoActual.titulo} />
-                                <p className="m-cols-2">Profesor: {this.state.cursoActual.profesor}</p>
-                            </>
-
+                        course ? (
+                            <div className="ed-grid">
+                                <div className="l-block ">
+                                    <h1 className="m-cols-3">{course.titulo} </h1>
+                                    <img className="m-cols-1" src={course.image} alt={course.titulo} />
+                                    <p className="m-cols-2">Profesor: {course.profesor}</p>
+                                </div>
+                                <div className="ed-grid">
+                                    <h2>Escribe tu comentario</h2>
+                                    <input type="text" placeholder="Escribir..." onChange={myComment.bind(this)}/>
+                                    <p>{comment}</p>
+                                </div>
+                            </div>
                         ) :
                             <h1>El curso no existe</h1>
                     }
                 </div>
             )
-        }
 }
+
 
 export default Course
